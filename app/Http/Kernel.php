@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AclMiddleware;
+use App\Http\Middleware\CorsMiddleware;
 use App\Http\Middleware\RolesMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -29,8 +30,9 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            CorsMiddleware::class,
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            'throttle:api',
+            // 'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -38,5 +39,17 @@ class User extends Authenticatable
             "user_id",
             "role_id",
         )->withPivot(["id", "user_id", "role_id"]);
+    }
+
+    /**
+     * Mutators
+     */
+
+    protected function password(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => bcrypt($value),
+            get: fn ($value) => $value,
+        );
     }
 }

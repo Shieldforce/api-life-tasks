@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace App\Services\Auth;
 
 use App\Http\Requests\AuthLoginRequest;
+use App\Http\Requests\User\UserCreatePublicRequest;
+use App\Models\User;
 use App\Services\Routes\SetRoutesService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -26,6 +29,56 @@ class LoginService
         $user->tokens()->where("name", $request->client)->delete();
 
         $token = $user->createToken($request->client, []);
+
+        SetRoutesService::run();
+
+        return [
+            'type_token'   => 'Bearer',
+            'access_token' => $token->plainTextToken,
+            'expires_at'   => $token->expires_at ?? null,
+            "user"         => $user
+        ];
+    }
+
+    public static function handleRegister(UserCreatePublicRequest $request)
+    {
+        $credentials = $request->only(["email", "password"]);
+
+        if(!Auth::attempt($credentials)) {
+            throw ValidationException::withMessages([
+                'email' => ['Credênciais incorretas!.'],
+            ]);
+        }
+
+        $user = $request->user();
+
+        $user->tokens()->where("name", $request->client)->delete();
+
+        $token = $user->createToken($request->client, []);
+
+        SetRoutesService::run();
+
+        return [
+            'type_token'   => 'Bearer',
+            'access_token' => $token->plainTextToken,
+            'expires_at'   => $token->expires_at ?? null,
+            "user"         => $user
+        ];
+    }
+
+    public static function handleResetPasword(User $user, string $password)
+    {
+        $credentials = [ "email" => $user->email, "password" => $password ];
+
+        if(!Auth::attempt($credentials)) {
+            throw ValidationException::withMessages([
+                'email' => ['Credênciais incorretas!.'],
+            ]);
+        }
+
+        $user->tokens()->delete();
+
+        $token = $user->createToken("resetPassword", []);
 
         SetRoutesService::run();
 
