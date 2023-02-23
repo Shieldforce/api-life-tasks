@@ -41,6 +41,11 @@ class User extends Authenticatable
         )->withPivot(["id", "user_id", "role_id"]);
     }
 
+    public function passwordReset()
+    {
+        return $this->hasOne(PasswordReset::class, "email", "email");
+    }
+
     /**
      * Mutators
      */

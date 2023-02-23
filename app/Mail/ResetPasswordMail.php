@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\PasswordReset;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -34,9 +35,18 @@ class ResetPasswordMail extends Mailable implements ShouldQueue
     public function content()
     {
         $user = User::where("email", $this->email)->first();
+
         $token = Crypt::encrypt(
-            json_encode(["id" => $user->id, "email" => $user->email, "microtime" => microtime(true)])
+            json_encode([ "email" => $user->email, "microtime" => microtime(true)])
         );
+
+        $data = [
+            "email" => $user->email,
+            "token" => $token,
+        ];
+
+        PasswordReset::updateOrcreate($data);
+
         $linkReset = env("URL_FRONTEND") . "/resetPassword/{$token}";
         return new Content(
             view: 'emails.resetPassword',

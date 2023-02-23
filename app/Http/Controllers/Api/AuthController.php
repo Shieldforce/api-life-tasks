@@ -9,11 +9,13 @@ use App\Http\Requests\ResetPasswordUpdateRequest;
 use App\Http\Requests\User\UserCreatePublicRequest;
 use App\Http\Resources\UserResource;
 use App\Mail\ResetPasswordMail;
+use App\Models\PasswordReset;
 use App\Models\Role;
 use App\Models\User;
 use App\Services\Auth\LoginService;
 use App\Services\Routes\SetRoutesService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
 
@@ -62,13 +64,20 @@ class AuthController extends Controller
 
     public function resetPassword(ResetPasswordUpdateRequest $request)
     {
-        $valid             = $request->validated();
-        $credentials       = json_decode(Crypt::decrypt($valid["token"]), true);
-        $currentMicrotime  = microtime(true) - $credentials["microtime"];
-        if($currentMicrotime > "10") {
+        $valid         = $request->validated();
+        $passwordReset = PasswordReset::where("token", $valid["token"])->first();
+
+        if(!isset($passwordReset)) {
+            throw new \Exception("Token inválido!!");
+        }
+
+        $current = Carbon::now();
+        $expire  = $current->diffInHours($passwordReset->created_at);
+        if ($expire > 1) {
             throw new \Exception("Token expirado!");
         }
-        $user              = User::find($credentials["id"]);
+
+        $user = $passwordReset->user;
         $user->update($request->safe()->only(["password"]));
         return LoginService::handleResetPasword($user, $valid["password"]);
     }
