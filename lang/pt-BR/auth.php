@@ -14,4 +14,6 @@ return [
 
     'failed'   => 'Parece que você digitou um CPF ou CNPJ que não está cadastrado.',
     'throttle' => 'Você realizou muitas tentativas de login. Por favor, tente novamente em :seconds segundos.',
+    'password' => 'Sua senha está incorreta!.',
+
 ];
