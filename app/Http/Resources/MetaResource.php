@@ -16,8 +16,8 @@ class MetaResource extends JsonResource
             'impacto'                   => $this->impacto,
             'descricao'                 => $this->descricao,
             'concluida'                 => $this->concluida,
-            'created_at'                => $this->created_at->diffForHumans(),
-            'updated_at'                => $this->updated_at->diffForHumans(),
+            'created_at'                => isset($this->created_at) ? $this->created_at->diffForHumans() : "-",
+            'updated_at'                => isset($this->updated_at) ? $this->updated_at->diffForHumans() : "-",
         ];
     }
 }
