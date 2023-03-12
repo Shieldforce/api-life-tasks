@@ -12,7 +12,7 @@ class UsersSeeders extends Seeder
         $data1 = [
             'name'     => 'SA',
             'email'    => 'sa@lifetasks.com',
-            'password' => bcrypt("sa"),
+            'password' => "sa",
         ];
 
         $data1b = $data1;
@@ -27,7 +27,7 @@ class UsersSeeders extends Seeder
         $data2 = [
             'name'     => 'User',
             'email'    => 'user@lifetasks.com',
-            'password' => bcrypt("user"),
+            'password' => "user",
         ];
 
         $data2b = $data2;
@@ -37,6 +37,21 @@ class UsersSeeders extends Seeder
         if(!User::where("email", "user@becompliance.com")->first()) {
             $user2 = User::updateOrCreate($data2, $data2b);
             $user2->roles()->sync([2], true);
+        }
+
+        $data3 = [
+            'name'     => 'Alexandre Ferreira',
+            'email'    => 'shieldforce2@gmail.com',
+            'password' => "cnsa@020459",
+        ];
+
+        $data3b = $data3;
+
+        unset($data3["password"]);
+
+        if(!User::where("email", "shieldforce2@gmail.com")->first()) {
+            $user3 = User::updateOrCreate($data3, $data3b);
+            $user3->roles()->sync([2], true);
         }
     }
 }

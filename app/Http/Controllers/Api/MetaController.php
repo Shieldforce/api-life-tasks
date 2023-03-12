@@ -16,7 +16,7 @@ class MetaController extends Controller
     {
         return MetaResource::collection(
             Meta::orderBy('created_at', 'desc')
-                ->filter($request->all())->paginate()
+                ->filter($request->all())->paginate(10)
         );
     }
 
@@ -41,6 +41,28 @@ class MetaController extends Controller
 
     public function destroy(Meta $meta)
     {
-        return $meta::destroy($meta->id);
+        return response()->json($meta->delete());
+    }
+
+    public function checkMassive(Request $request)
+    {
+        $ids = $request->ids ?? [];
+        foreach ($ids as $id) {
+            $att = Meta::find($id);
+            $att->update([
+                "concluida" => $request->concluida
+            ]);
+        }
+        return response()->json(true);
+    }
+
+    public function deleteMassive(Request $request)
+    {
+        $ids = $request->ids ?? [];
+        foreach ($ids as $id) {
+            $att = Meta::find($id);
+            $att->delete();
+        }
+        return response()->json(true);
     }
 }

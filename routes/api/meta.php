@@ -28,4 +28,12 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
         ->name("destroy")
         ->middleware("roles:User");
 
+    Route::post("/checkMassive", [ $class, "checkMassive" ])
+        ->name("checkMassive")
+        ->middleware("roles:User");
+
+    Route::post("/deleteMassive", [ $class, "deleteMassive" ])
+        ->name("deleteMassive")
+        ->middleware("roles:User");
+
 });

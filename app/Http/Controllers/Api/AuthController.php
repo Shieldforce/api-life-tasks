@@ -13,6 +13,7 @@ use App\Models\PasswordReset;
 use App\Models\Role;
 use App\Models\User;
 use App\Services\Auth\LoginService;
+use App\Services\Metas\MetasDefaultService;
 use App\Services\Routes\SetRoutesService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -52,6 +53,7 @@ class AuthController extends Controller
         $create = User::create($request->validated());
         $rolesIds = array_values(Role::where("name", "User")->pluck("id")->toArray());
         $create->roles()->sync($rolesIds);
+        MetasDefaultService::get($create);
         return LoginService::handleRegister($request);
     }
 

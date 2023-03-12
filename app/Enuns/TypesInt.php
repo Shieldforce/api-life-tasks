@@ -4,6 +4,6 @@ namespace App\Enuns;
 
 enum TypesInt : int
 {
-    case ArrayAssociativeTrue  = 1;
-    case ArrayAssociativeFalse = 0;
+    case type_1  = 1;
+    case type_2 = 0;
 }

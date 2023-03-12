@@ -47,6 +47,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Relations
+     */
+    public function metas()
+    {
+        return $this->hasMany(Meta::class, "user_id", "id");
+    }
+
+    /**
      * Mutators
      */
 
