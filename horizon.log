@@ -1,53 +1,7 @@
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-the input device is not a TTY
-
-   RedisException 
-
-  Connection timed out
-
-  at vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:161
-    157▕         if (version_compare(phpversion('redis'), '5.3.0', '>=') && ! is_null($context = Arr::get($config, 'context'))) {
-    158▕             $parameters[] = $context;
-    159▕         }
-    160▕ 
-  ➜ 161▕         $client->{$persistent ? 'pconnect' : 'connect'}(...$parameters);
-    162▕     }
-    163▕ 
-    164▕     /**
-    165▕      * Create a new redis cluster instance.
-
-      [2m+25 vendor frames [22m
-  26  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   RedisException 
-
-  Connection timed out
-
-  at vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:161
-    157▕         if (version_compare(phpversion('redis'), '5.3.0', '>=') && ! is_null($context = Arr::get($config, 'context'))) {
-    158▕             $parameters[] = $context;
-    159▕         }
-    160▕ 
-  ➜ 161▕         $client->{$persistent ? 'pconnect' : 'connect'}(...$parameters);
-    162▕     }
-    163▕ 
-    164▕     /**
-    165▕      * Create a new redis cluster instance.
-
-      [2m+25 vendor frames [22m
-  26  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -62,11 +16,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -81,11 +35,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -100,11 +54,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -119,11 +73,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -138,11 +92,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -157,11 +111,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -176,11 +130,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -195,11 +149,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -214,11 +168,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -233,11 +187,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -252,11 +206,11 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 
    Predis\Connection\ConnectionException 
 
-  Connection timed out [tcp://172.17.0.1:6379]
+  Connection refused [tcp://127.0.0.1:63782]
 
   at vendor/predis/predis/src/Connection/AbstractConnection.php:131
     127▕      */
@@ -271,156 +225,4 @@ the input device is not a TTY
 
       [2m+32 vendor frames [22m
   33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
-
-   Predis\Connection\ConnectionException 
-
-  Connection timed out [tcp://172.17.0.1:6379]
-
-  at vendor/predis/predis/src/Connection/AbstractConnection.php:131
-    127▕      */
-    128▕     protected function onConnectionError($message, $code = 0)
-    129▕     {
-    130▕         CommunicationException::handle(
-  ➜ 131▕             new ConnectionException($this, "$message [{$this->getParameters()}]", $code)
-    132▕         );
-    133▕     }
-    134▕ 
-    135▕     /**
-
-      [2m+32 vendor frames [22m
-  33  artisan:35
-      Illuminate\Foundation\Console\Kernel::handle()
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
