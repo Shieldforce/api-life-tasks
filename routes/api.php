@@ -20,7 +20,7 @@ Route::post('/register', [ AuthController::class, "register" ])->name("api.regis
 Route::post("/resetPasswordSend", [ AuthController::class, "resetPasswordSend" ])->name("resetPasswordSend");
 Route::post("/resetPassword", [ AuthController::class, "resetPassword" ])->name("resetPassword");
 
-Route::middleware(['auth:sanctum', 'acl'])->group(function () {
+Route::middleware(['cors', 'auth:sanctum', 'acl'])->group(function () {
 
     foreach (File::allFiles(__DIR__ . '/api') as $route_file) {
         require $route_file->getPathname();
