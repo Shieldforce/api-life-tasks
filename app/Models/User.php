@@ -87,7 +87,7 @@ class User extends Authenticatable
         return Attribute::make(
             set: fn($value) => $value,
             get: fn($value) => isset($value) ? env("APP_URL") . "/storage/" .$value :
-                env("APP_URL") . "/storage/img/avatar.png",
+                env("APP_URL") . "/img/avatar.png",
         );
     }
 }
