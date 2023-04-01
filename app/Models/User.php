@@ -16,6 +16,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'picture',
         'password',
     ];
 
@@ -54,6 +55,21 @@ class User extends Authenticatable
         return $this->hasMany(Meta::class, "user_id", "id");
     }
 
+    public function chats()
+    {
+        return $this->hasMany(Chat::class, "user_id", "id");
+    }
+
+    public function usersStatus()
+    {
+        return $this
+            ->belongsToMany(
+                "chat_status",
+                "user_id",
+                "chat_id",
+            )->withPivot(["status", "user_id", "chat_id"]);
+    }
+
     /**
      * Mutators
      */
@@ -61,8 +77,17 @@ class User extends Authenticatable
     protected function password(): Attribute
     {
         return Attribute::make(
-            set: fn ($value) => bcrypt($value),
-            get: fn ($value) => $value,
+            set: fn($value) => bcrypt($value),
+            get: fn($value) => $value,
+        );
+    }
+
+    protected function picture(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => $value,
+            get: fn($value) => isset($value) ? env("APP_URL") . "/storage/" .$value :
+                env("APP_URL") . "/storage/img/avatar.png",
         );
     }
 }

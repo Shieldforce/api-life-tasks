@@ -20,6 +20,7 @@ class UserEditRequest extends FormRequest
             'password'                => ['string', 'min:4'],
             "name"                    => ['string'],
             "email"                   => ['email', $unique],
+            'picture'                 => [ "nullable", "string"],
             "client"                  => [ "in:" . AllowClientsService::getString() ],
             "roles_ids"               => [ "array", "in:".$this->rolesIdsExisting()]
         ];

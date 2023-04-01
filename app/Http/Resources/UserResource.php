@@ -17,7 +17,7 @@ class UserResource extends JsonResource
             'email'             => $this->email,
             'roles'             => array_unique($this->roles->pluck("name")->toArray()),
             'permissions'       => $abilities,
-            'picture'           => $this->picture ?? 'img/user/defaultAvatar.png',
+            'picture'           => $this->picture,
             'created_at'        => $this->created_at->diffForHumans(),
             'updated_at'        => $this->updated_at->diffForHumans(),
         ];
