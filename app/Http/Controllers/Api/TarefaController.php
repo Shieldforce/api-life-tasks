@@ -16,7 +16,7 @@ class TarefaController extends Controller
     {
         return TarefaResource::collection(
             Tarefa::orderBy('created_at', 'desc')
-                ->filter($request->all())->paginate(10)
+                ->filter($request->all())->paginate(99999999999999999999)
         );
     }
 

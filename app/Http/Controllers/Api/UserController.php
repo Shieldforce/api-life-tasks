@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         return UserResource::collection(
             User::orderBy('created_at', 'desc')
-                ->filter($request->all())->paginate()
+                ->filter($request->all())->paginate(99999999999999999999)
         );
     }
 

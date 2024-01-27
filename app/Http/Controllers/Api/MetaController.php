@@ -16,7 +16,7 @@ class MetaController extends Controller
     {
         return MetaResource::collection(
             Meta::orderBy('created_at', 'desc')
-                ->filter($request->all())->paginate(10)
+                ->filter($request->all())->paginate(99999999999999999999)
         );
     }
 

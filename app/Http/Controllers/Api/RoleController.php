@@ -16,7 +16,7 @@ class RoleController extends Controller
     {
         return RoleResource::collection(
             Role::orderBy('created_at', 'desc')
-                ->filter($request->all())->paginate()
+                ->filter($request->all())->paginate(99999999999999999999)
         );
     }
 
