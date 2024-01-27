@@ -11,17 +11,17 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
     Route::get("/", [ $class, "index" ])
         ->name("index");
 
-    Route::get("/{$model}", [ $class, "show" ])
+    Route::get("/{role}", [ $class, "show" ])
         ->name("show");
 
     Route::post("/", [ $class, "store" ])
         ->name("store")
         ->middleware("roles:SA");
 
-    Route::put("/{$model}", [ $class, "update" ])
+    Route::put("/{role}", [ $class, "update" ])
         ->name("update");
 
-    Route::delete("/{$model}", [ $class, "destroy" ])
+    Route::delete("/{role}", [ $class, "destroy" ])
         ->name("destroy");
 
 });

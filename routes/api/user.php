@@ -12,7 +12,7 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
         ->name("index")
         ->middleware("roles:SA");
 
-    Route::get("/{$model}", [ $class, "show" ])
+    Route::get("/{user}", [ $class, "show" ])
         ->name("show")
         ->middleware("roles:SA");
 
@@ -20,7 +20,7 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
         ->name("store")
         ->middleware("roles:SA");
 
-    Route::put("/{$model}", [ $class, "update" ])
+    Route::put("/{user}", [ $class, "update" ])
         ->name("update")
         ->middleware("roles:SA");
 
@@ -28,7 +28,7 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
         ->name("savePicture")
         ->middleware("roles:all");
 
-    Route::delete("/{$model}", [ $class, "destroy" ])
+    Route::delete("/{user}", [ $class, "destroy" ])
         ->name("destroy")
         ->middleware("roles:SA");
 
