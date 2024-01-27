@@ -12,7 +12,7 @@ Route::prefix("/{$model}")->name("api.{$model}.")->group(function () use ($model
         ->name("index")
         ->middleware("roles:User");
 
-    Route::get("/", [ $class, "show" ])
+    Route::get("/{tarefa}", [ $class, "show" ])
         ->name("show")
         ->middleware("roles:User");
 
